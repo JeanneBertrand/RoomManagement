@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "68623831-c972-47c3-9d08-4aba67e79be7",
+		"name": "roomManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create ACP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml;ty=1",
+						"type": "text"
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "X-M2M-Ri",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<m2m:acp xmlns:m2m=\"http://www.onem2m.org/xml/protocols\" rn=\"ACP_1\">\r\n    <pv>\r\n        <acr>\r\n            <acor>user</acor>\r\n            <acop>2</acop>\r\n        </acr>\r\n    </pv>\r\n    <pvs>\r\n        <acr>\r\n            <acor>admin:admin</acor>\r\n            <acop>63</acop>\r\n        </acr>\r\n    </pvs>\r\n</m2m:acp>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/~/in-cse/in-name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"in-cse",
+						"in-name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml;ty=2",
+						"type": "text"
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "X-M2M-Ri",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<m2m:ae xmlns:m2m=\"http://www.onem2m.org/xml/protocols\" rn=\"Heating\">\r\n   <apn>APP_1</apn>\r\n   <api>APP_ID_1</api>\r\n   <rr>false</rr>\r\n</m2m:ae>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/~/mn-cse/mn-name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create DataContainer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml;ty=3",
+						"type": "text"
+					},
+					{
+						"key": "X-M2M-Origin",
+						"value": "admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "X-M2M-Ri",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:cnt xmlns:m2m = \"http://www.onem2m.org/xml/protocols\" rn = \"DATA\">\r\n\r\n </m2m:cnt>"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/WindowsSensor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"WindowsSensor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create DescriptorContainer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/xml;ty=3"
+					},
+					{
+						"key": "X-M2M-Origin",
+						"type": "text",
+						"value": "admin:admin"
+					},
+					{
+						"key": "X-M2M-Ri",
+						"type": "text",
+						"value": "123456"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:cnt xmlns:m2m = \"http://www.onem2m.org/xml/protocols\" rn = \"DESCRIPTOR\">\r\n\r\n </m2m:cnt>"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/WindowsSensor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"WindowsSensor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create descriptor CIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": " admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": " application/xml;ty=4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:cin xmlns:m2m=\"http://www.onem2m.org/xml/protocols\">\r\n\r\n    <cnf>application/xml</cnf>\r\n\r\n    <con>\r\n\r\n        &lt;obj&gt;\r\n\r\n            &lt;str name=&quot;type&quot; val=&quot;Light&quot;/&gt;\r\n\r\n            &lt;str name=&quot;location&quot; val=&quot;GEI&quot;/&gt;\r\n\r\n            &lt;str name=&quot;appId&quot; val=&quot;Light&quot;/&gt;\r\n\r\n            &lt;op name=&quot;getValue&quot; href=&quot;/in-cse/in-name/Light/DATA/la&quot;\r\n\r\n         in=&quot;obix:Nil&quot; out=&quot;obix:Nil&quot; is=&quot;retrieve&quot;/&gt;\r\n\r\n        &lt;/obj&gt;\r\n\r\n    </con>\r\n\r\n</m2m:cin>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/Light/DESCRIPTOR",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"Light",
+						"DESCRIPTOR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create descriptor CIN MotionSensor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"type": "text",
+						"value": " admin:admin"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": " application/xml;ty=4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:cin xmlns:m2m=\"http://www.onem2m.org/xml/protocols\">\r\n\r\n    <cnf>application/xml</cnf>\r\n\r\n    <con>\r\n\r\n        &lt;obj&gt;\r\n\r\n            &lt;str name=&quot;type&quot; val=&quot;MotionSensor&quot;/&gt;\r\n\r\n            &lt;str name=&quot;location&quot; val=&quot;GEI&quot;/&gt;\r\n\r\n            &lt;str name=&quot;appId&quot; val=&quot;MotionSensor&quot;/&gt;\r\n\r\n            &lt;op name=&quot;getValue&quot; href=&quot;/in-cse/in-name/MotionSensor/DATA/la&quot;\r\n\r\n         in=&quot;obix:Nil&quot; out=&quot;obix:Nil&quot; is=&quot;retrieve&quot;/&gt;\r\n\r\n        &lt;/obj&gt;\r\n\r\n    </con>\r\n\r\n</m2m:cin>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/MotionSensor/DESCRIPTOR",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"MotionSensor",
+						"DESCRIPTOR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create data CIN LumSensor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": " admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": " application/xml;ty=4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:cin xmlns:m2m=\"http://www.onem2m.org/xml/protocols\">\r\n\r\n    <cnf>message</cnf>\r\n\r\n    <con>\r\n\r\n      &lt;obj&gt;\r\n\r\n        &lt;str name=&quot;appId&quot; val=&quot;LuminositySensor&quot;/&gt;\r\n\r\n        &lt;str name=&quot;category&quot; val=&quot;luminosity &quot;/&gt;\r\n\r\n        &lt;int name=&quot;data&quot; val=&quot;46&quot;/&gt;\r\n\r\n        &lt;str name=&quot;unit&quot; val=&quot;lum&quot;/&gt;\r\n\r\n      &lt;/obj&gt;\r\n\r\n    </con>\r\n\r\n</m2m:cin>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/LuminositySensor/DATA",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"LuminositySensor",
+						"DATA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create data CIN MotionSensor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"type": "text",
+						"value": " admin:admin"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": " application/xml;ty=4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:cin xmlns:m2m=\"http://www.onem2m.org/xml/protocols\">\r\n\r\n    <cnf>message</cnf>\r\n\r\n    <con>\r\n\r\n      &lt;obj&gt;\r\n\r\n        &lt;str name=&quot;appId&quot; val=&quot;MotionSensor&quot;/&gt;\r\n\r\n        &lt;str name=&quot;category&quot; val=&quot;isSomeoneThere&quot;/&gt;\r\n\r\n        &lt;bool name=&quot;data&quot; val=&quot;true&quot;/&gt;\r\n\r\n        &lt;str name=&quot;unit&quot; val=&quot;boolean&quot;/&gt;\r\n\r\n      &lt;/obj&gt;\r\n\r\n    </con>\r\n\r\n</m2m:cin>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/MotionSensor/DATA",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"MotionSensor",
+						"DATA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create data CIN WindowsSensor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"type": "text",
+						"value": " admin:admin"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": " application/xml;ty=4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<m2m:cin xmlns:m2m=\"http://www.onem2m.org/xml/protocols\">\r\n\r\n    <cnf>message</cnf>\r\n\r\n    <con>\r\n\r\n      &lt;obj&gt;\r\n\r\n        &lt;str name=&quot;appId&quot; val=&quot;WindowsSensor&quot;/&gt;\r\n\r\n        &lt;str name=&quot;category&quot; val=&quot;isWindowOpen&quot;/&gt;\r\n\r\n        &lt;bool name=&quot;data&quot; val=&quot;false&quot;/&gt;\r\n\r\n        &lt;str name=&quot;unit&quot; val=&quot;boolean&quot;/&gt;\r\n\r\n      &lt;/obj&gt;\r\n\r\n    </con>\r\n\r\n</m2m:cin>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/WindowsSensor/DATA",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"WindowsSensor",
+						"DATA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get latest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": " admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": " application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/LuminositySensor/DATA/la",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"LuminositySensor",
+						"DATA",
+						"la"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete latest",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-M2M-Origin",
+						"value": " admin:admin",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": " application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/~/mn-cse/mn-name/LuminositySensor/DATA/la",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"~",
+						"mn-cse",
+						"mn-name",
+						"LuminositySensor",
+						"DATA",
+						"la"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
